@@ -1,0 +1,19 @@
+{% extends 'common/base.html' %}
+
+{% block content %}
+    <h1>New post</h1>
+    <form method="POST" >
+    	{% csrf_token %}
+        
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Save</button>
+    	{% if page_div == "add" %}
+    	<a href="{% url 'insp_list' %}" 
+        	class="save btn btn-default" onclick="return confirm('취소하시겠습니까?')">취소</a>
+        {% endif %}
+        {% if page_div == "edit" %}
+    	<a href="{% url 'insp_detail' mba_cd=form.mba_cd.value reptdc_no=form.reptdc_no.value %}" 
+        	class="save btn btn-default" onclick="return confirm('취소하시겠습니까?')">취소</a>
+        {% endif %}
+    </form>
+{% endblock %}

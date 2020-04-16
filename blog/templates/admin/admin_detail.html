@@ -1,0 +1,16 @@
+{% extends 'common/base.html' %}
+
+{% block content %}
+    <div class="post">
+        {% if post.reg_dtm %}
+            <div class="date">
+                {{ post.reg_dtm }}
+            </div>
+        {% endif %}
+        <a class="btn btn-default" href="{% url 'admin_edit' user_id=post.user_id %}"><span class="glyphicon glyphicon-pencil"></span></a>
+        <h1>{{ post.user_id }}</h1>
+        <p>{{ post.kor_nm }}</p>
+        <p>{{ post.eng_nm }}</p>
+        <p>{{ post.posi }}</p>
+    </div>
+{% endblock %}

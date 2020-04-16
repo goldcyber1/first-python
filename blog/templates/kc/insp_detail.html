@@ -1,0 +1,18 @@
+{% extends 'common/base.html' %}
+
+{% block content %}
+    <div class="post">
+        {% if post.strt_dt %}
+            <div class="date">
+                {{ post.strt_dt }}
+            </div>
+        {% endif %}
+        <a class="btn btn-default" href="{% url 'insp_edit' mba_cd=post.mba_cd reptdc_no=post.reptdc_no %}"><span class="glyphicon glyphicon-pencil"></span></a>
+       	<a href="{% url 'insp_delete'  mba_cd=post.mba_cd reptdc_no=post.reptdc_no %}" 
+       	class="btn btn-default" onclick="return confirm('정말 삭제하시겠습니까?')">삭제</a>
+        <a class="btn btn-default" href="{% url 'insp_list' %}">목록</a>
+        <h1>{{ post.mba_cd }}</h1>
+        <p>{{ post.reptdc_no }}</p>
+        <p>{{ post.reptdc_div }}</p>
+    </div>
+{% endblock content %}

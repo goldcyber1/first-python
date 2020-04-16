@@ -1,5 +1,6 @@
 from django.contrib import admin
-from .models import Post
+from .models import TKcVrfcReptdcAdmn, TKjIndiRcmmAdmin
 
-admin.site.register(Post)
+admin.site.register(TKcVrfcReptdcAdmn)
+admin.site.register(TKjIndiRcmmAdmin)
 

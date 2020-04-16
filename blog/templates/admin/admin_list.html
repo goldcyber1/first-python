@@ -1,0 +1,14 @@
+{% extends 'common/base.html' %}
+{% block content %}
+    {% for post in posts %}
+        <div class="post">
+            <div class="date">
+                {{ post.reg_dtm }}
+            </div>
+            <h1><a href="{% url 'admin_detail' user_id=post.user_id %}">{{ post.user_id }}</a></h1>
+            <p>{{ post.kor_nm }}</p>
+            <p>{{ post.eng_nm }}</p>
+            <p>{{ post.posi }}</p>
+        </div>
+    {% endfor %}
+{% endblock %}

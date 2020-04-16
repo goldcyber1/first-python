@@ -1,0 +1,11 @@
+<script>
+	msg = "{{ msg }}";
+	url_div = "{{ url_div }}";
+	alert(msg); 
+	if(url_div == "detail"){
+		window.location.href = "{{ post.get_detail }}";
+	}else{
+		window.location.href = "{{ post.get_list }}";
+	}
+	
+</script>
